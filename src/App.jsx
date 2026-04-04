@@ -7,21 +7,64 @@ import Beneficiaries from "./pages/Beneficiaries";
 import Events from "./pages/Events";
 import Search from "./pages/Search";
 import Settings from "./pages/Settings";
+import Layout from "./components/Layout";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/donations" element={<Donations />} />
-        <Route path="/beneficiaries" element={<Beneficiaries />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/settings" element={<Settings />} />
+        <Route
+          path="/dashboard"
+          element={
+            <Layout>
+              <Dashboard />
+            </Layout>
+          }
+        />
+        <Route
+          path="/donations"
+          element={
+            <Layout>
+              <Donations />
+            </Layout>
+          }
+        />
+        <Route
+          path="/beneficiaries"
+          element={
+            <Layout>
+              <Beneficiaries />
+            </Layout>
+          }
+        />
+        <Route
+          path="/events"
+          element={
+            <Layout>
+              <Events />
+            </Layout>
+          }
+        />
+        <Route
+          path="/search"
+          element={
+            <Layout>
+              <Search />
+            </Layout>
+          }
+        />
+        <Route
+          path="/settings"
+          element={
+            <Layout>
+              <Settings />
+            </Layout>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
 }
 
-export default App;git add .
+export default App;
