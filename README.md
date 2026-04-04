@@ -1,16 +1,34 @@
-# React + Vite
+# TrustSphere
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+TrustSphere is a project focused on building trust and security mechanisms for modern applications.
 
-Currently, two official plugins are available:
+## Features
+- Secure authentication
+- Trust verification
+- User privacy protection
+- Transparent logging
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Installation
+```bash
+git clone <repository-url>
+cd trust-sphere
+npm install
+```
 
-## React Compiler
+## Usage
+```bash
+npm start
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Documentation
+See [DOCS.md](./DOCS.md) for detailed documentation.
 
-## Expanding the ESLint configuration
+## Contributing
+Pull requests are welcome. Please follow our coding standards.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## License
+MIT License - see LICENSE file for details
+
+## Support
+For issues and questions, please open a GitHub issue.
