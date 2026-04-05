@@ -1,45 +1,45 @@
 import { Link, useLocation } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ onToggleSidebar }) {
   const location = useLocation();
 
+  const pageTitles = {
+    "/dashboard": "Dashboard",
+    "/donations": "Donations",
+    "/beneficiaries": "Beneficiaries",
+    "/events": "Events",
+    "/search": "Search",
+    "/settings": "Settings",
+  };
+
+  const currentPageTitle = pageTitles[location.pathname] || "Overview";
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <nav className="navbar navbar-expand-lg bg-white border-bottom sticky-top shadow-sm">
       <div className="container-fluid">
-        <Link className="navbar-brand fw-bold" to="/dashboard">
-          🔐 TrustSphere
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <span className="nav-link text-white">
-                {location.pathname === "/dashboard"
-                  ? "Dashboard"
-                  : location.pathname === "/donations"
-                  ? "Donations"
-                  : location.pathname === "/beneficiaries"
-                  ? "Beneficiaries"
-                  : location.pathname === "/events"
-                  ? "Events"
-                  : location.pathname === "/search"
-                  ? "Search"
-                  : location.pathname === "/settings"
-                  ? "Settings"
-                  : "Page"}
-              </span>
-            </li>
-          </ul>
+        <div className="d-flex align-items-center gap-2">
+          <button
+            type="button"
+            className="btn btn-outline-primary d-md-none"
+            onClick={onToggleSidebar}
+            aria-label="Toggle sidebar"
+          >
+            Menu
+          </button>
+          <Link className="navbar-brand fw-bold text-primary mb-0" to="/dashboard">
+            TrustSphere
+          </Link>
+          <span className="text-muted d-none d-sm-inline">/ {currentPageTitle}</span>
+        </div>
+
+        <div className="d-flex align-items-center ms-auto">
+          <div className="text-end me-2 d-none d-sm-block">
+            <div className="fw-semibold small">Organization Admin</div>
+            <div className="text-muted small">trustsphere.org</div>
+          </div>
+          <div className="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style={{ width: "38px", height: "38px" }}>
+            TS
+          </div>
         </div>
       </div>
     </nav>
